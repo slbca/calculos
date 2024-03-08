@@ -20,6 +20,12 @@ namespace Calculos
 
             Console.WriteLine($"36º Celsius = {t1}º Fahrenheit");
             Console.WriteLine($"100º Fahrenheit = {t2}º Celsius");
+
+            double d1 = Conversoes.ConverterDistancias(Conversoes.ConversaoDistancia.MetrosMilhas, 300);
+            double d2 = Conversoes.ConverterDistancias(Conversoes.ConversaoDistancia.MilhasMetros, 1000);
+
+            Console.WriteLine($"300 metros = {d1} milhas");
+            Console.WriteLine($"1000 milhas = {d2} metros");
             Console.ReadKey();
         }
     }
