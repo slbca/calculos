@@ -22,11 +22,21 @@ namespace Calculos
         }
 
         /// <summary>
+        /// Tipo de conversão de distânicas
+        /// </summary>
+        public enum ConversaoDistancia
+        {
+            Nulo = 0,
+            MetrosMilhas,
+            MilhasMetros
+        }
+
+        /// <summary>
         /// Conversão de temperaturas
         /// </summary>
         /// <param name="conversao">a conversão a efetuar</param>
         /// <param name="temperatura">a temperatura a converter</param>
-        /// <returns>Retorna o resultado da conversão</returns>
+        /// <returns>Retorna o resultado da conversão da temperatura</returns>
 
         public static double ConverterTemperatura(ConversaoTemperatura conversao, double temperatura)
         {
@@ -42,6 +52,26 @@ namespace Calculos
             return -1;
         }
 
+        /// <summary>
+        /// Conversão de Distâncias
+        /// </summary>
+        /// <param name="conversao">a conversão a efetuar</param>
+        /// <param name="temperatura">a distância a converter</param>
+        /// <returns>Retorna o resultado da conversão da distância</returns>
+
+        public static double ConverterDistancias(ConversaoDistancia conversao, double distancia)
+        {
+            if (conversao == ConversaoDistancia.MetrosMilhas)
+            {
+                return distancia * 0.0006213712;
+            }
+            else if (conversao == ConversaoDistancia.MilhasMetros)
+            {
+                return distancia * 1609.344;
+            }
+
+            return -1;
+        }
     }
 }
 
